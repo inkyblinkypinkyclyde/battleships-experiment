@@ -1,12 +1,33 @@
 import React from "react";
-import PlayerTwoGrid from "./PlayerTwoGrid";
-import PlayerTwoShips from "./PlayerTwoShips";
+import Grid from "./Grid.js";
+import PlayerShips from "./PlayerShips.js";
 
-const PlayerTwo = () => {
+const PlayerTwo = ({
+    playerOneShips,
+    playerOneCells,
+    playerTwoShips,
+    playerTwoCells,
+    gamePhase }
+) => {
     return (
         <>
-            <PlayerTwoGrid />
-            <PlayerTwoShips />
+            <h3>Enemy waters</h3>
+            <Grid
+                playerGrid={false}
+                playerOneCells={playerOneCells}
+                playerTwoCells={playerTwoCells}
+            />
+            <h3>Your waters</h3>
+            <Grid
+                playerGrid={false}
+                playerOneCells={playerOneCells}
+                playerTwoCells={playerTwoCells}
+            />
+            <PlayerShips
+                playerShips={false}
+                playerOneShips={playerOneShips}
+                playerTwoShips={playerTwoShips}
+            />
         </>
     )
 }

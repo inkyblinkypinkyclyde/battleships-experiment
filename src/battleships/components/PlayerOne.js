@@ -1,6 +1,6 @@
 import React from "react";
-import Grid from "./grid.js";
-import PlayerOneShips from "./PlayerOneShips";
+import Grid from "./Grid.js";
+import PlayerShips from "./PlayerShips.js";
 
 const PlayerOne = ({
     playerOneShips,
@@ -23,8 +23,10 @@ const PlayerOne = ({
                 playerOneCells={playerOneCells}
                 playerTwoCells={playerTwoCells}
             />
-            <PlayerOneShips
+            <PlayerShips
+                playerShips={true}
                 playerOneShips={playerOneShips}
+                playerTwoShips={playerTwoShips}
             />
         </>
     )
