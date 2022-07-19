@@ -13,25 +13,28 @@ const ShipDiv = styled.div`
 display: grid;
 grid-template-columns:42px 42px 42px 42px 42px;
 `
-const PlayerShips = ({ playerOneShips, playerTwoShips, playerShips }) => {
+const PlayerShips = ({ playerOneShips, playerTwoShips, playerShips, clickHandler }) => {
 
     const displayPlayerOneShips = playerOneShips.map((ship) => {
         const thisShip = ship.length.map((cell) => {
             return (
                 <Cell
                     key={cell._cellId}
+                    cell={cell}
+                    clickHandler={clickHandler}
                 />
             )
         })
         return (
-            <>
+            <div
+                key={ship._shipId}
+            >
                 {ship.name}
                 <ShipDiv
-                    key={ship._shipId}
                 >
                     {thisShip}
                 </ShipDiv>
-            </>
+            </div>
         )
     })
     const displayPlayerTwoShips = playerTwoShips.map((ship) => {
@@ -39,6 +42,8 @@ const PlayerShips = ({ playerOneShips, playerTwoShips, playerShips }) => {
             return (
                 <Cell
                     key={cell._cellId}
+                    cell={cell}
+                    clickHandler={clickHandler}
                 />
             )
         })

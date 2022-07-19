@@ -7,6 +7,7 @@ const PlayerOne = ({
     playerOneCells,
     playerTwoShips,
     playerTwoCells,
+    clickHandler,
     gamePhase }
 ) => {
     return (
@@ -16,17 +17,20 @@ const PlayerOne = ({
                 playerGrid={false}
                 playerOneCells={playerOneCells}
                 playerTwoCells={playerTwoCells}
+                clickHandler={clickHandler}
             />
             <h3>Your waters</h3>
             <Grid
                 playerGrid={true}
                 playerOneCells={playerOneCells}
                 playerTwoCells={playerTwoCells}
+                clickHandler={clickHandler}
             />
             <PlayerShips
                 playerShips={true}
                 playerOneShips={playerOneShips}
                 playerTwoShips={playerTwoShips}
+                clickHandler={clickHandler}
             />
         </>
     )

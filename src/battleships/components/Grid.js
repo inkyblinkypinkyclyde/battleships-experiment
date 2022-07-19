@@ -10,15 +10,18 @@ grid-template-columns: 42px 42px 42px 42px;
 const Grid = ({
     playerGrid,
     playerOneCells,
-    playerTwoCells
+    playerTwoCells,
+    clickHandler
 }) => {
 
     const displayPlayerOneGrid = playerOneCells.map((cell) => {
         return (
             <Cell
                 key={cell._cellId}
+                cell={cell}
                 value={cell.value}
-                playergrid={playerGrid}
+                playerGrid={playerGrid}
+                clickHandler={clickHandler}
             />
         )
     })
@@ -26,8 +29,10 @@ const Grid = ({
         return (
             <Cell
                 key={cell._cellId}
+                cell={cell}
                 value={cell.value}
-                playergrid={playerGrid}
+                playerGrid={playerGrid}
+                clickHandler={clickHandler}
             />
         )
     })
